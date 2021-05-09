@@ -1,0 +1,141 @@
+{%load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <style>
+                html {
+                height: 100%;
+                }
+
+                body {
+                height: 100%;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                display: grid;
+                justify-items: center;
+                align-items: center;
+                background-color: #e7cfb0b9;
+                }
+
+                input {
+                    display: block;
+                    margin: auto auto;
+                    width: 100%;
+                    margin-bottom: 2em;
+                    padding: .5em 0;
+                    border: none;
+                    border-bottom: 1px solid #eaeaea;
+                    padding-bottom: 1.25em;
+                    color: #757575;
+                    &:focus {
+                    outline: none;
+                    }
+                }
+
+               
+
+                .radio-inline input[type=radio]{
+                    position: inherit;
+                    margin-left: -20px;
+                    font-weight:bold;
+                }
+
+                
+                
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type="text/JavaScript" src="{% static '/state.js' %}"></script>
+        <title>
+            Cowin Slot Notification
+        </title>
+    </head>
+    <body>
+        <main id="main-page">
+            <div class="log-form">
+                <h3>Enter Details for Registration</h3>
+                <form action="{%url 'login'%}" method="POST">
+                    {%csrf_token%}
+                    <label for="username">Username</label><br>
+                    {{form.username}}
+                    <label for="email">Enter your email:</label><br>
+                    {{form.email}}
+                    <div class="container">
+                        
+                        <label class="radio-inline">
+                            <input type="radio" name="selector" value=1 >Select by District
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="selector" value=0  >Select By PinCode
+                        </label>
+                        <br><br>
+                        
+                        <div id="selec_loc">
+                            <div class='row' id='state_div' style="display:none;">
+                            
+                                <select name="state" id="state" onchange='selct_district(this.value)'></select>
+                            </div>
+                            <br>
+                            <div class='row' id='district_div' style="display:none;">
+                            
+                                <select name="district" id="district">
+                              <option value=" " disabled selected>Select your district</option>
+                            </select>
+                                
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                        <div id="pinCode_div" class="validate" style="display:none;">
+                            <label for="pinCode">Enter your pincode:</label >
+                            {{form.pinCode}}
+                        </div>
+                        
+                    
+                    
+                        <button type="submit" class="btn">Submit</button>  
+                    
+                </form novalidate>
+            </div><!--end log form -->
+    
+        </main>
+        <script>
+            $(document).ready(function(){
+                $('input[type=radio]').click(function(){
+                    //alert(this.value);
+                    change_box_display(this.value)
+                });
+            });
+            
+            function change_box_display(type) {
+                if (type == 1) {
+                    document.getElementById('pinCode_div').style.display = 'none'
+                    
+                    document.getElementById('state_div').style.display = 'inherit'
+                    
+                    document.getElementById('district_div').style.display = 'inherit'
+                    
+                } else {
+                    
+                    document.getElementById('pinCode_div').style.display = 'inherit'
+                    
+                    document.getElementById('state_div').style.display = 'none'
+                   
+                    document.getElementById('district_div').style.display = 'none'
+                    
+                }
+            }
+
+            function addvaluesForDrodown(){
+                var select = document.getElementById("state_sel");
+                opt = document.createElement("option");
+                opt.value = "value";
+                opt.textContent = "text to be displayed";
+                select.appendChild(opt);
+            }
+        
+        </script>
+    </body>
+    
+</html>
