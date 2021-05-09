@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 's2e5@tmv7=#2%l!8mayya$15kzo#+25_u1h$#5_isa%%@_l&7t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = TRUE
 
 ALLOWED_HOSTS = ["https://cowinslotnotifier.herokuapp.com/","localhost"]
 
