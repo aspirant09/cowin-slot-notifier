@@ -39,6 +39,7 @@ def fetchStateAndDistrictData(formDdata,userData):
             }
     url="https://cdn-api.co-vin.in/api/v2/admin/location/states"
     response = requests.get(url, headers=headers)
+    print("Fetching state value... ",response)
     data=response.json()
     states=data['states']
     for stateData in states:
@@ -48,6 +49,7 @@ def fetchStateAndDistrictData(formDdata,userData):
     
     url="https://cdn-api.co-vin.in/api/v2/admin/location/districts/"+userData.state
     response = requests.get(url, headers=headers)
+    print("Fetching district value... ",response)
     data=response.json()
     districts=data['districts']
     for districtData in districts:
