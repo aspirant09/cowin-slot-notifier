@@ -6,5 +6,4 @@ psycopg2
 regex
 requests
 requests-oauthlib
-django-heroku
 gunicorn

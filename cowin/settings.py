@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 
 
@@ -35,7 +34,7 @@ ALLOWED_HOSTS = ["https://cowin-slot-notifier-witd7.ondigitalocean.app/","https:
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,7 +58,7 @@ ROOT_URLCONF = 'cowin.urls'
 
 WHITENOISE_USE_FINDERS = True
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 TEMPLATES = [
     {
@@ -139,7 +138,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 
