@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import django_heroku
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +29,7 @@ SECRET_KEY = 's2e5@tmv7=#2%l!8mayya$15kzo#+25_u1h$#5_isa%%@_l&7t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://cowinslotnotifier.herokuapp.com/","localhost"]
+ALLOWED_HOSTS = ["https://cowin-slot-notifier-witd7.ondigitalocean.app/","https://cowinslotnotifier.herokuapp.com/","localhost"]
 
 
 # Application definition
@@ -143,5 +143,3 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-
-django_heroku.settings(locals())
