@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'db2',
-        'USER': 'postgres',
+        'USER': 'db2',
         'PASSWORD': 'wp40qt1smnc5ms23',
         'HOST': 'app-178f4baf-08d1-4e2f-8187-1e616ad826fb-do-user-9212279-0.b.db.ondigitalocean.com',
         'PORT': '25060',
