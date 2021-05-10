@@ -79,6 +79,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cowin.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -87,9 +88,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'db2',
         'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PASSWORD': 'wp40qt1smnc5ms23',
+        'HOST': 'app-178f4baf-08d1-4e2f-8187-1e616ad826fb-do-user-9212279-0.b.db.ondigitalocean.com',
+        'PORT': '25060',
     }
 }
 
