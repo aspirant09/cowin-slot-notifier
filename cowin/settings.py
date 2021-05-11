@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'cowin.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db2',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': 'defaultdb',
+        'USER': 'doadmin',
+        'PASSWORD': 'nxg7gsf283qxtrco',
+        'HOST': 'db-postgresql-blr1-28666-do-user-9212279-0.b.db.ondigitalocean.com',
+        'PORT': '25060',
     }
 }
 
@@ -139,6 +139,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 
 

@@ -60,7 +60,7 @@ def cron_job():
         for centre_name in centre_names:
             count=count+1
             Content= Content.__add__(str(count)+": "+ centre_name+"\n")
-        smtpserver.sendMail(user["mail"],Content,param1,param2)
+        #smtpserver.sendMail(user["mail"],Content,param1,param2)
         if Content:
             print("Sending mail to ====>",user["mail"])
 
@@ -71,5 +71,5 @@ def cron_job():
     
 
 cron_job()
-#sched.add_job(cron_job, 'interval', minutes=1)
-#sched.start()
+sched.add_job(cron_job, 'interval', minutes=30)
+sched.start()
