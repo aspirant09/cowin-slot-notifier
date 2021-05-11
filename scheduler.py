@@ -7,8 +7,7 @@ import psycopg2
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-param1=sys.argv[1]
-param2=sys.argv[2]
+
 sched=BlockingScheduler()
 
 #@sched.scheduled_job("interval",minutes=1)
@@ -60,11 +59,11 @@ def cron_job():
         for centre_name in centre_names:
             count=count+1
             Content= Content.__add__(str(count)+": "+ centre_name+"\n")
-        smtpserver.sendMail(user["mail"],Content,param1,param2)
+        smtpserver.sendMail(user["mail"],Content)
         if Content:
             print("Sending mail to ====>",user["mail"])
 
-            smtpserver.sendMail(user["mail"],Content,param1,param2)
+            smtpserver.sendMail(user["mail"],Content)
         else:
             print("No slots available in any centres...")
 
